@@ -1,11 +1,9 @@
-
-
 def sensorStub():
     return {
         'temperatureInC': 50,
         'precipitation': 70,
         'humidity': 26,
-        'windSpeedKMPH': 52
+        'windSpeedKMPH': 49
     }
 
 
@@ -14,10 +12,12 @@ def report(sensorReader):
     weather = "Sunny Day"
 
     if (readings['temperatureInC'] > 25):
-        if readings['precipitation'] >= 20 and readings['precipitation'] < 60:
-            weather = "Partly Cloudy"
+        if readings['precipitation'] >= 20 and readings['precipitation'] < 60:    
+            weather = "Partly Cloudy"      
         elif readings['windSpeedKMPH'] > 50:
             weather = "Alert, Stormy with heavy rain"
+        elif readings['humidity'] > 25:
+            weather = "rain"
     return weather
 
 
